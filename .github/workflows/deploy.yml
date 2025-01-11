@@ -1,0 +1,23 @@
+name: deploy vite project
+
+on: 
+  push:
+    branches:
+      master
+
+jobs:
+  create:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4.1.0
+      - name: Build project
+        run: |
+          yarn
+          yarn build
+      - name: Deploy
+        # You may pin to the exact commit or the version.
+        # uses: crazy-max/ghaction-github-pages@fbf0a4fa4e00f45accd6cf3232368436ec06ed59
+        uses: crazy-max/ghaction-github-pages@v4.1.0
+        with:
+          build_dir: dist
