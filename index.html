@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/continuation-writing-helper/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Continuation Writing Helper</title>
+    <script type="module" crossorigin src="/continuation-writing-helper/assets/index-CW4RwOvq.js"></script>
+    <link rel="stylesheet" crossorigin href="/continuation-writing-helper/assets/index-DxPh0JKj.css">
+  </head>
+  <body class="h-screen bg-gradient-to-tl from-dark to-theme">
+    <div class="flex flex-col h-full ">
+      <div class="nav bg-opacity-100 text-white text-xl p-5">
+        <div>
+          <p>Continuation Writing Helper</p>
+        </div>
+      </div>
+      <div class="flex flex-row justify-center items-center h-full">
+        <div id="writing" class="backdrop-blur-md w-2/3 h-5/6 p-10 flex flex-col justify-center">
+          <!-- <div contenteditable="true" class="
+          group
+            text-white m-10 p-5 h-full
+            truncate
+            border-solid rounded-lg border-2 border-opacity-30 border-white 
+            focus:outline-none"
+          >
+            <span contenteditable="false" class="text-gray pointer-events-none group-focus:hidden">A journey of a thousand miles begins with a single step here...</span>
+          </div> -->
+          <textarea id="texts"
+            placeholder="A journey of a thousand miles begins with a single step here..."
+            class="
+            resize-none w-full h-full p-5 bg-dark text-white bg-opacity-75
+            border-solid rounded-2xl border-2 border-opacity-30 border-white
+            disabled:opacity-70 disabled:bg-opacity-50
+            outline-none"
+          ></textarea>
+        </div>
+          <div id="control" class="flex h-2/3 p-10 flex-col text-white justify-center">
+            <h1 class="text-2xl mb-3">控制面板</h1>
+
+            <label id="temperature-label" for="temperature">temperature</label>
+            <input type="range" id="temperature" name="temp" min="0" max="2" step="0.1"/>
+
+            <label id="max-tokens-label" for="max-tokens">max tokens</label>
+            <input type="range" id="max-tokens" name="temp" min="0" max="8000" step="1" value="1024"/>
+
+            <label id="presence-penalty-label" for="presence-penalty">presence penalty</label>
+            <input type="range" id="presence-penalty" name="temp" min="-2" max="2" step="0.1" value="0"/>
+
+            <div class="flex flex-row justify-center">
+              <button id="generate" class="bg-theme text-white p-3 my-5 w-full rounded-lg">▶ Generate</button>
+            </div>          
+        </div>
+      </div>
+      <div id="footer" class="text-white text-right m-2 p-2">
+        Copyright (c) Surfish 2025.
+        Powered by Deepseek-v3.
+      </div>
+    </div>
+
+  </body>
+</html>
