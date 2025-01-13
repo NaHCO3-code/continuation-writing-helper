@@ -4,6 +4,7 @@ const textArea = document.getElementById('texts')! as HTMLTextAreaElement;
 const generateButton = document.getElementById('generate')! as HTMLButtonElement;
 const tempreature = document.getElementById('temperature')! as HTMLInputElement;
 const maxTokens = document.getElementById('max-tokens')! as HTMLInputElement;
+const presence_penalty = document.getElementById('presence-penalty')! as HTMLInputElement;
 
 const appState = {
   generating: false
@@ -34,7 +35,7 @@ generateButton.addEventListener('click', async () => {
       "frequency_penalty": 0,
       "logprobs": 0,
       "max_tokens": parseFloat(maxTokens.value),
-      "presence_penalty": 0,
+      "presence_penalty": parseFloat(presence_penalty.value),
       "stop": null,
       "stream": true,
       "stream_options": null,
@@ -78,3 +79,4 @@ function showRangeValue(inputEl: HTMLInputElement, labelEl: HTMLLabelElement) {
 
 showRangeValue(tempreature, document.getElementById('temperature-label')! as HTMLLabelElement);
 showRangeValue(maxTokens, document.getElementById('max-tokens-label')! as HTMLLabelElement);
+showRangeValue(presence_penalty, document.getElementById('presence-penalty-label')! as HTMLLabelElement);
